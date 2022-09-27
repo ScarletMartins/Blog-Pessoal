@@ -1,8 +1,4 @@
-✨🚀 Blog-Pessoal
-
----
-
-🛠️ In the process of development
+✨🚀 Blog-Pessoal		 ||		 🛠️ In the process of development
 
 ---
 
