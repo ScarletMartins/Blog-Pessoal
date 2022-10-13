@@ -11,5 +11,6 @@ import com.generation.blogpessoal.model.Tema;
 @Repository
 public interface TemaRepository extends JpaRepository<Tema, Long> {
 	
+														//@Param é igual o %texto%, busca um dado
 	public List<Tema> findAllByDescricaoContainingIgnoreCase(@Param("descricao") String descricao);
 }

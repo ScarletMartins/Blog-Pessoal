@@ -28,7 +28,7 @@ import com.generation.blogpessoal.repository.TemaRepository;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TemaController {
 		
-	@Autowired
+	@Autowired //faz a relação entre o controller e o jpa implantado no TemaRepository
 	private TemaRepository temaRepository;
 	
 	@GetMapping
