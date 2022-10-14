@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 
 /**
  *  Classe UserDetailsServiceImpl 
+ *  
+ *  * Entra dentro do MySQL para valiidar o userName e password
  * 
  *  Implementa a interface UserDetailsService, que é responsável por recuperar os dados
  *  do usuário no Banco de Dados pelo usuário e converter em um objeto da Classe 

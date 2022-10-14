@@ -9,7 +9,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 /**
+ * 
  * Classe UserDetailsImpl 
+ * 
+ * * Configurar userName e password
  * 
  * Implementa a interface UserDetails, que descreve o usuário para 
  * o Spring Security,ou seja, detalha as caracteríticas do usuário.

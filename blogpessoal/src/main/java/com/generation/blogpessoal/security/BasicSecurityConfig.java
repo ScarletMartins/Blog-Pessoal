@@ -15,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 /**
  * Classe BasicSecurityConfig
  * 
+ * Libera algumas rotas de segurança
+ * 
  * Esta classe é responsável por habilitar a segurança básica da aplicação e o login
  * na aplicação.
  * 
