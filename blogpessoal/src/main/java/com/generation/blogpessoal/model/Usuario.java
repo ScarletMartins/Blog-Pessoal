@@ -15,31 +15,43 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity //informa que trata-se de uma entidade que se tornará uma tabela
+@Entity // informa que trata-se de uma entidade que se tornará uma tabela
 @Table(name = "tb_usuarios") // cria e nomea tabela
 public class Usuario {
-	
-	@Id //identifica que o atributo é um identificador único (Primary key)
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //atribui um auto-incremento ao id
+
+	@Id // identifica que o atributo é um identificador único (Primary key)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // atribui um auto-incremento ao id
 	private Long id;
-	
+
 	@NotBlank(message = "O atributo é obrigatório!")
 	private String nome;
 
 	@NotBlank(message = "O atributo é obrigatório!")
-	@Email(message = "O atributo deve ser um email válido") 
+	@Email(message = "O atributo deve ser um email válido")
 	private String usuario;
-	
+
 	@NotBlank(message = "O atributo é obrigatório!")
 	@Size(min = 8, message = "A senha deve ter no mínimo 8 caracteres")
 	private String senha;
-	
+
 	private String foto;
-	
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE) //um usuario para muitas postagens
-																//remove tudo que está relacionado ao usuario caso este user seja apagado
-	@JsonIgnoreProperties("usuario") //ignora as propriedades do usuario, pra evitar um lopping infinito
+
+	// remove tudo que está relacionado ao usuario caso este user seja apagado
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE) // um usuario para muitas postagens
+	@JsonIgnoreProperties("usuario") // ignora as propriedades do usuario, pra evitar um lopping infinito
 	private List<Postagem> postagem;
+
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+	
+	public Usuario() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
