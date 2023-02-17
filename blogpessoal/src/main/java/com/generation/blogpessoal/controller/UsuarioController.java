@@ -38,7 +38,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/{id}") //lista endereço pelo ID do usuário
 	public ResponseEntity<Usuario> getById(@PathVariable Long id){
 		return repository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
